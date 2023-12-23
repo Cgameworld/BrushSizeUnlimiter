@@ -7,20 +7,34 @@ using Game;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BrushSizeUnlimiter.Systems;
+using Unity.Entities;
 
 namespace BrushSizeUnlimiter
 {
     [FileLocation(nameof(BrushSizeUnlimiter))]
     public class MyOptions : ModSetting
     {
+        private float _maxBrushSize;
+        private BrushSizeUnlimiterSystem m_brushSizeUnlimiterSystem;
+
         public MyOptions(IMod mod)
             : base(mod)
         {
             SetDefaults();
         }
 
-        [SettingsUISlider(min = 1000f, max = 50000f, step = 500f, unit = "integer")]
-        public float MaxBrushSize { get; set; }
+        [SettingsUISlider(min = 1000f, max = 20000f, step = 500f, unit = "integer")]
+        public float MaxBrushSize
+        {
+            get => _maxBrushSize;
+            set
+            {
+                _maxBrushSize = value;
+                m_brushSizeUnlimiterSystem = World.DefaultGameObjectInjectionWorld?.GetOrCreateSystemManaged<BrushSizeUnlimiterSystem>();
+                m_brushSizeUnlimiterSystem.SetDevUIMaxBrushSize();
+            }
+        }
 
         [SettingsUISection("BrushPreviewMod")]
         public bool BrushPreviewMod { get; set; }
@@ -67,8 +81,6 @@ namespace BrushSizeUnlimiter
             }
 
             AssetDatabase.global.SaveSettingsNow();
-
-
         }
     }
 }

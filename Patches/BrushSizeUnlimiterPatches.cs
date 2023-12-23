@@ -50,34 +50,17 @@ namespace BrushSizeUnlimiter.Patches
     {
         static bool Prefix(ref float __result)
         {
-            __result = 15000f;
+            if (MyMod.Options != null)
+            {
+                __result = MyMod.Options.MaxBrushSize;
+            }
+            else
+            {
+                __result = 10000f;
+            }
             return false;
       }
        
-    }
-
-    
-    //patch devmode brush tool
-    [HarmonyPatch(typeof(EditorToolOptionsUISystem))]
-    [HarmonyPatch("OnCreate")]
-    public static class OnCreatePatchDevMode
-    {
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var codes = new List<CodeInstruction>(instructions);
-            var newInstruction = new CodeInstruction(OpCodes.Ldc_I4, 10000);
-
-            for (var i = 0; i < codes.Count; i++)
-            {
-              if (codes[i].opcode == OpCodes.Ldc_I4 && (int)codes[i].operand == 0x1F4)
-              {
-                    codes.RemoveAt(i);
-                    codes.Insert(i, newInstruction);
-
-                }
-            }
-            return codes.AsEnumerable();
-        }
     }
 
     //set brush strength to 0 when hovering
@@ -92,34 +75,39 @@ namespace BrushSizeUnlimiter.Patches
         [HarmonyPrefix]
         public static void Prefix(ObjectToolSystem __instance)
         {
-            int stateValue = Convert.ToInt32(fieldInfo.GetValue(__instance));
-
-            if (__instance.actualMode == ObjectToolSystem.Mode.Brush)
+            if (MyMod.Options !=null && MyMod.Options.BrushPreviewMod && __instance.brushSize >= 2500f)
             {
-                if (stateValue == 2 || stateValue == 3)
+                int stateValue = Convert.ToInt32(fieldInfo.GetValue(__instance));
+
+                if (__instance.actualMode == ObjectToolSystem.Mode.Brush)
                 {
-                    __instance.brushStrength = brushStrengthTemp;
-                }
-                else
-                {
-                    brushStrengthTemp = __instance.brushStrength;
-                    __instance.brushStrength = 0f;
+                    if (stateValue == 2 || stateValue == 3)
+                    {
+                        __instance.brushStrength = brushStrengthTemp;
+                    }
+                    else
+                    {
+                        brushStrengthTemp = __instance.brushStrength;
+                        __instance.brushStrength = 0f;
+                    }
                 }
             }
-
         }
 
         [HarmonyPatch("Update")]
         [HarmonyPostfix]
         public static void Postfix(ObjectToolSystem __instance)
         {
-            int stateValue = Convert.ToInt32(fieldInfo.GetValue(__instance));
-
-            if (__instance.actualMode == ObjectToolSystem.Mode.Brush)
+            if (MyMod.Options != null && MyMod.Options.BrushPreviewMod && __instance.brushSize >= 2500f)
             {
-                if (stateValue != 2 || stateValue != 3)
+                int stateValue = Convert.ToInt32(fieldInfo.GetValue(__instance));
+
+                if (__instance.actualMode == ObjectToolSystem.Mode.Brush)
                 {
-                    __instance.brushStrength = brushStrengthTemp;
+                    if (stateValue != 2 || stateValue != 3)
+                    {
+                        __instance.brushStrength = brushStrengthTemp;
+                    }
                 }
             }
         }

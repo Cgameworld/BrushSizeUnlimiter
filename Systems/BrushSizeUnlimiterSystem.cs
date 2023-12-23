@@ -21,36 +21,29 @@ namespace BrushSizeUnlimiter.Systems
 {
     public class BrushSizeUnlimiterSystem : GameSystemBase
     {
-        private ToolUISystem toolUI;
 
         protected override void OnCreate()
         {
             base.OnCreate();
-            CreateKeyBinding();
-            // Example on how to get a existing ECS System from the ECS World
-            this.toolUI = World.GetExistingSystemManaged<ToolUISystem>();
+            SetDevUIMaxBrushSize();
         }
 
-        private void CreateKeyBinding()
+        public void SetDevUIMaxBrushSize()
         {
-            var inputAction = new InputAction("MyModHotkeyPress");
-            inputAction.AddBinding("<Keyboard>/n");
-            inputAction.performed += OnHotkeyPress;
-            inputAction.Enable();
-        }
-
-        private void OnHotkeyPress(InputAction.CallbackContext obj)
-        {
+            int maxSize = 10000;
+            if (MyMod.Options != null)
+            {
+                maxSize = (int)MyMod.Options.MaxBrushSize;
+            }
 
             FieldInfo field = typeof(EditorToolOptionsUISystem).GetField("m_BrushOptions", BindingFlags.NonPublic | BindingFlags.Instance);
             List<IWidget> m_BrushOptions = (List<IWidget>)field.GetValue(World.GetExistingSystemManaged<EditorToolOptionsUISystem>());
 
             if (m_BrushOptions != null)
             {
-                m_BrushOptions.OfType<IntSliderField>().First().max = (int)MyMod.Options.MaxBrushSize;
+                m_BrushOptions.OfType<IntSliderField>().First().max = maxSize;
             }
         }
-
         protected override void OnUpdate() { }
     }
 }
