@@ -4,7 +4,14 @@ using Game;
 using Game.Audio;
 using Game.Prefabs;
 using Game.Simulation;
+using Game.UI.Editor;
 using Game.UI.InGame;
+using Game.UI.Widgets;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -34,9 +41,14 @@ namespace BrushSizeUnlimiter.Systems
 
         private void OnHotkeyPress(InputAction.CallbackContext obj)
         {
-            UnityEngine.Debug.Log("You pressed the hotkey, very cool! Good job matey");
 
-            //AddUpdateBinding(new GetterValueBinding<float>("tool", "brushSizeMax", () => (!m_ToolSystem.actionMode.IsEditor()) ? 1000f : 5000f));
+            FieldInfo field = typeof(EditorToolOptionsUISystem).GetField("m_BrushOptions", BindingFlags.NonPublic | BindingFlags.Instance);
+            List<IWidget> m_BrushOptions = (List<IWidget>)field.GetValue(World.GetExistingSystemManaged<EditorToolOptionsUISystem>());
+
+            if (m_BrushOptions != null)
+            {
+                m_BrushOptions.OfType<IntSliderField>().First().max = (int)MyMod.Options.MaxBrushSize;
+            }
         }
 
         protected override void OnUpdate() { }
