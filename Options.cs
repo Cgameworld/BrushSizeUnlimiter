@@ -16,6 +16,7 @@ namespace BrushSizeUnlimiter
     public class MyOptions : ModSetting
     {
         private float _maxBrushSize;
+        private bool brushPreviewMod;
         private BrushSizeUnlimiterSystem m_brushSizeUnlimiterSystem;
 
         public MyOptions(IMod mod)
@@ -33,14 +34,28 @@ namespace BrushSizeUnlimiter
                 _maxBrushSize = value;
                 m_brushSizeUnlimiterSystem = World.DefaultGameObjectInjectionWorld?.GetOrCreateSystemManaged<BrushSizeUnlimiterSystem>();
                 m_brushSizeUnlimiterSystem.SetDevUIMaxBrushSize();
+                MakeSureSave = new Random().Next();
             }
         }
 
         [SettingsUISection("BrushPreviewMod")]
-        public bool BrushPreviewMod { get; set; }
+        public bool BrushPreviewMod
+        {
+            get => brushPreviewMod;
+            set
+            {
+                brushPreviewMod = value;
+                MakeSureSave = new Random().Next();
+            }
+        }
+
+        //sometimes saving doesn't happen when changing values to their default? - hack to guarantee
+        [SettingsUIHidden]
+        public int MakeSureSave { get; set; }
 
         public override void SetDefaults()
         {
+            MakeSureSave = 0;
             MaxBrushSize = 10000f;
             BrushPreviewMod = true;
         }
