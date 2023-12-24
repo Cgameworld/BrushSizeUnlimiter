@@ -23,8 +23,9 @@ Set the maximum brush size to what your computer can handle, as the larger the b
 
 # Notes
 
-- If the brush touches over the edge of purchased area, none of the brush actions will apply, enable anarchy with the mod [Anarchy](https://thunderstore.io/c/cities-skylines-ii/p/yenyang/Anarchy/) by yenyang to overcome this.
 - When using extremely large brush sizes avoid placing trees or objects at full strength, if the brush is too big your game might crash
+- If the brush touches over the edge of your city's purchased area, none of the brush actions will apply, enable anarchy with the mod [Anarchy](https://thunderstore.io/c/cities-skylines-ii/p/yenyang/Anarchy/) by yenyang to overcome this.
+
 
 # Changelog
 
