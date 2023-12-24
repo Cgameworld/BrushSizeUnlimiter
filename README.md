@@ -6,6 +6,14 @@ This mod raises the maximum size that brushes can be set to in the tool menu and
 
 Works both ingame and in the asset editor. The mod on default sets the maximum brush size to 10000. 
 
+# Requirements
+- BepInEx 5
+- HookUI
+
+# Installation
+1) Download the mod from either [thunderstore.io](https://thunderstore.io/c/cities-skylines-ii/p/Cgameworld/Brush_Size_Unlimiter) or from the mod's releases page on [GitHub](https://github.com/Cgameworld/BrushSizeUnlimiter/releases) 
+2) If installing from GitHub, place BrushSizeUnlimiter folder inside `BepInEx/plugins`
+
 # Settings
 
 ![Mod Settings Panel](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/preview2.jpg)
@@ -18,14 +26,6 @@ Set the maximum brush size to what your computer can handle, as the larger the b
 
 - If the brush touches over the edge of purchased area, none of the brush actions will apply, enable anarchy with the mod [Anarchy](https://thunderstore.io/c/cities-skylines-ii/p/yenyang/Anarchy/) by yenyang to overcome this.
 - When using extremely large brush sizes avoid placing trees or objects at full strength, if the brush is too big your game might crash
-
-# Requirements
-- BepInEx 5
-- HookUI
-
-# Installation
-1) Download the mod from either [thunderstore.io](https://thunderstore.io/c/cities-skylines-ii/p/Cgameworld/Brush_Size_Unlimiter) or from the mod's releases page on [GitHub](https://github.com/Cgameworld/BrushSizeUnlimiter/releases) 
-2) If installing from GitHub, place BrushSizeUnlimiter folder inside `BepInEx/plugins`
 
 # Changelog
 
