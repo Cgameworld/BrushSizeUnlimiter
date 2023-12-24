@@ -2,7 +2,7 @@
 
 ![Brush Ingame](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/preview1.jpg)
 
-This mod raises the maximum size that brushes can be set to with the ingame and devmode tools. 
+This mod raises the maximum size that brushes can be set to in the tool menu and the devmode panel. 
 
 Works both ingame and in the asset editor. The mod on default sets the maximum brush size to 10000. 
 
@@ -25,7 +25,7 @@ Set the maximum brush size to what your computer can handle, as the larger the b
 
 # Installation
 1) Download the mod from either [thunderstore.io](https://thunderstore.io/c/cities-skylines-ii/p/Cgameworld/Brush_Size_Unlimiter) or from the mod's releases page on [GitHub](https://github.com/Cgameworld/BrushSizeUnlimiter/releases) 
-2) If installing from GitHub, place MapTextureReplacer folder inside `BepInEx/plugins` and optionally download the example texture pack DesertMapTheme.zip
+2) If installing from GitHub, place BrushSizeUnlimiter folder inside `BepInEx/plugins`
 
 # Changelog
 
