@@ -1,14 +1,16 @@
 # Brush Size Unlimiter
 
-![Brush Ingame](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/previewimage1.jpg)
+![Brush Ingame](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/preview1.jpg)
 
 This mod raises the maximum size that brushes can be set to with the ingame and devmode tools. 
 
 Works both ingame and in the asset editor. The mod on default sets the maximum brush size to 10000. 
 
-![Mod Settings Panel](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/previewimage2.jpg)
+![Mod Settings Panel](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/preview2.jpg)
 
-In the settings, the maximum brush size can be configured from a low of 1000 to a high of 20000. Set the maximum brush size to what your computer can handle, as the larger the brush size the more performance degrades. The maximum brush size of 20000 covers the entire unlockable play area!
+In the settings, the maximum brush size can be configured from a low of 1000 to a high of 20000.
+
+Set the maximum brush size to what your computer can handle, as the larger the brush size the more performance degrades. The maximum brush size of 20000 covers the entire unlockable play area!
 
 # Notes
 
