@@ -8,7 +8,6 @@ Works both ingame and in the asset editor. The mod on default sets the maximum b
 
 # Requirements
 - BepInEx 5
-- HookUI
 
 # Installation
 1) Download the mod from either [thunderstore.io](https://thunderstore.io/c/cities-skylines-ii/p/Cgameworld/Brush_Size_Unlimiter) or from the mod's releases page on [GitHub](https://github.com/Cgameworld/BrushSizeUnlimiter/releases) 
