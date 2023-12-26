@@ -1,0 +1,9 @@
+{
+  "name": "Brush_Size_Unlimiter",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Cgameworld/BrushSizeUnlimiter",
+  "description": "Raises the maximum size that brushes can be set to in the tool menu and in the developer mode panel",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ]
+}

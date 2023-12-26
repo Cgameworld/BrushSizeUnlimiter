@@ -2,9 +2,9 @@
 
 ![Brush Ingame](https://raw.githubusercontent.com/Cgameworld/BrushSizeUnlimiter/master/preview1.jpg)
 
-This mod raises the maximum size that brushes can be set to in the tool menu and the devmode panel. 
+This mod raises the maximum size that brushes can be set to in the tool menu and in the developer mode panel. 
 
-Works both ingame and in the asset editor. The mod on default sets the maximum brush size to 10000. 
+Works ingame and in the asset editor. The mod on default sets the maximum brush size to 10000. 
 
 # Requirements
 - BepInEx 5
@@ -28,6 +28,10 @@ Set the maximum brush size to what your computer can handle, as the larger the b
 
 
 # Changelog
+
+## 1.0.1
+
+- Thunderstore Description Update
 
 ## 1.0.0 
 - Initial Release
