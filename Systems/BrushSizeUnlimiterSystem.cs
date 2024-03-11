@@ -1,25 +1,14 @@
-using Colossal.UI;
-using Colossal.UI.Binding;
 using Game;
-using Game.Audio;
-using Game.Prefabs;
-using Game.Simulation;
 using Game.UI.Editor;
-using Game.UI.InGame;
 using Game.UI.Widgets;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Scripting;
 
 namespace BrushSizeUnlimiter.Systems
 {
-    public class BrushSizeUnlimiterSystem : GameSystemBase
+    public partial class BrushSizeUnlimiterSystem : GameSystemBase
     {
 
         protected override void OnCreate()
@@ -31,9 +20,9 @@ namespace BrushSizeUnlimiter.Systems
         public void SetDevUIMaxBrushSize()
         {
             int maxSize = 10000;
-            if (MyMod.Options != null)
+            if (Mod.Options != null)
             {
-                maxSize = (int)MyMod.Options.MaxBrushSize;
+                maxSize = (int)Mod.Options.MaxBrushSize;
             }
 
             FieldInfo field = typeof(EditorToolOptionsUISystem).GetField("m_BrushOptions", BindingFlags.NonPublic | BindingFlags.Instance);

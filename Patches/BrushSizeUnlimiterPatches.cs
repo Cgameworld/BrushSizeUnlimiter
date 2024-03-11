@@ -34,25 +34,17 @@ namespace BrushSizeUnlimiter.Patches
         }
     }
 
-    [HarmonyPatch(typeof(SystemOrder), nameof(SystemOrder.Initialize))]
-    internal class InjectSystemsPatch
-    {
-        static void Postfix(UpdateSystem updateSystem)
-        {
-            MyMod.Instance.OnCreateWorld(updateSystem);
-        }
-    }
 
     //patch ingame brush tool
     [HarmonyPatch(typeof(ToolUISystem))]
     [HarmonyPatch("<OnCreate>b__17_15")]
     public static class OnCreatePatch
-    {
+    {     
         static bool Prefix(ref float __result)
         {
-            if (MyMod.Options != null)
+            if (Mod.Options != null)
             {
-                __result = MyMod.Options.MaxBrushSize;
+                __result = Mod.Options.MaxBrushSize;
             }
             else
             {
@@ -75,7 +67,7 @@ namespace BrushSizeUnlimiter.Patches
         [HarmonyPrefix]
         public static void Prefix(ObjectToolSystem __instance)
         {
-            if (MyMod.Options !=null && MyMod.Options.BrushPreviewMod && __instance.brushSize >= 2500f)
+            if (Mod.Options !=null && Mod.Options.BrushPreviewMod && __instance.brushSize >= 2500f)
             {
                 int stateValue = Convert.ToInt32(fieldInfo.GetValue(__instance));
 
@@ -98,7 +90,7 @@ namespace BrushSizeUnlimiter.Patches
         [HarmonyPostfix]
         public static void Postfix(ObjectToolSystem __instance)
         {
-            if (MyMod.Options != null && MyMod.Options.BrushPreviewMod && __instance.brushSize >= 2500f)
+            if (Mod.Options != null && Mod.Options.BrushPreviewMod && __instance.brushSize >= 2500f)
             {
                 int stateValue = Convert.ToInt32(fieldInfo.GetValue(__instance));
 

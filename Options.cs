@@ -60,42 +60,4 @@ namespace BrushSizeUnlimiter
             BrushPreviewMod = true;
         }
     }
-    public class MyMod : IMod
-    {
-        public static MyOptions Options { get; set; }
-
-        public static MyMod Instance { get; private set; }
-
-        public void OnDisable()
-        {
-        }
-
-        public void OnDispose()
-        {
-        }
-
-        public void OnEnable()
-        {
-        }
-
-        public void OnLoad()
-        {
-            Instance = this;
-        }
-        public void OnCreateWorld(UpdateSystem updateSystem)
-        {
-            UnityEngine.Debug.Log("BrushSizeUnlimiter Options Loaded");
-            Options = new(this);
-            Options.RegisterInOptionsUI();
-            AssetDatabase.global.LoadSettings("Options", Options, new MyOptions(this));
-
-
-            foreach (var lang in GameManager.instance.localizationManager.GetSupportedLocales())
-            {
-                GameManager.instance.localizationManager.AddSource(lang, new LocaleEN(Options));
-            }
-
-            AssetDatabase.global.SaveSettingsNow();
-        }
-    }
 }
