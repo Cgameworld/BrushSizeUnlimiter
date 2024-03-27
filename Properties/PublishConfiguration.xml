@@ -1,21 +1,41 @@
 ﻿<Publish>
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
-	<ModId Value="" />
+	<ModId Value="75249" />
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="Brush Size Unlimiter" />
 	<!--Short description of the mod-->
 	<ShortDescription Value="Brush Size Unlimiter" />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
-	<!--LongDescription Value="First PDX MOD test!! " /-->
+	<!--LongDescription Value="TBD" /-->
 	<LongDescription>
-TestDescp
-	</LongDescription>
+Brush Size Unlimiter raises the maximum size that brushes can be set to in the tool menu and in the developer mode panel.
+
+Works ingame and in the editor. The mod on default sets the maximum brush size to 10000.
+
+# Settings
+
+In the mod settings, the maximum brush size can be configured from a low of 1000 to a high of 20000.
+
+Set the maximum brush size to what your computer can handle, as the larger the brush size, the more performance degrades. The maximum brush size of 20000 covers the entire unlockable play area!
+
+For brush sizes greater >2500, the mod temporarily sets the brush strength in the background to 0 while hovering to significantly increase performance, can optionally be disabled
+
+# Notes
+
+- When using extremely large brush sizes avoid placing trees or objects at full strength, if the brush is too big your game might crash
+- If the brush touches over the edge of your city's purchased area, none of the brush actions will apply, use the Anarchy mod by yenyang to overcome this.
+
+# Conclusion
+
+If you like this mod be sure to leave an upvote! Thanks
+  </LongDescription>
 	<!--Thumbnail-->
 	<Thumbnail Value="Properties/Thumbnail.png" />
 	<!--Screenshot, can be set multiple times-->
-	<Screenshot Value="" />
+	<Screenshot Value="Properties/Gallery1.jpg" />
+  <Screenshot Value="Properties/Gallery2.jpg" />
 	<!--Tag, can be set multiple times-->
-	<Tag Value="" />
+	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
@@ -25,9 +45,10 @@ TestDescp
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="" />
-	<!--ChangeLog>
-	</ChangeLog-->
+	<ChangeLog>
+    - description update
+  </ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
-	<ExternalLink Type="" Url="" />
+  <ExternalLink Type="github" Url="https://github.com/Cgameworld/BrushSizeUnlimiter" />
+  <ExternalLink Type="discord" Url="https://discord.gg/tDZhaMrgsQ" />
 </Publish>

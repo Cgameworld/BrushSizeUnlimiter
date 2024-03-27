@@ -10,8 +10,7 @@ Works ingame and in the asset editor. The mod on default sets the maximum brush 
 - BepInEx 5
 
 # Installation
-1) Download the mod from either [thunderstore.io](https://thunderstore.io/c/cities-skylines-ii/p/Cgameworld/Brush_Size_Unlimiter) or from the mod's releases page on [GitHub](https://github.com/Cgameworld/BrushSizeUnlimiter/releases) 
-2) If installing from GitHub, place BrushSizeUnlimiter folder inside `BepInEx/plugins`
+1) Download the mod from [PDXMods](https://mods.paradoxplaza.com/mods/75249/Windows)
 
 # Settings
 
@@ -20,6 +19,8 @@ Works ingame and in the asset editor. The mod on default sets the maximum brush 
 In the mod settings, the maximum brush size can be configured from a low of 1000 to a high of 20000.
 
 Set the maximum brush size to what your computer can handle, as the larger the brush size, the more performance degrades. The maximum brush size of 20000 covers the entire unlockable play area!
+
+For brush sizes greater >2500, the mod temporarily sets the brush strength in the background to 0 while hovering to significantly increase performance, can optionally be disabled
 
 # Notes
 
