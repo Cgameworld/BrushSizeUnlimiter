@@ -6,9 +6,6 @@ This mod raises the maximum size that brushes can be set to in the tool menu and
 
 Works ingame and in the asset editor. The mod on default sets the maximum brush size to 10000. 
 
-# Requirements
-- BepInEx 5
-
 # Installation
 1) Download the mod from [PDXMods](https://mods.paradoxplaza.com/mods/75249/Windows)
 
