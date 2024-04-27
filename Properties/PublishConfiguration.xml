@@ -22,6 +22,7 @@ For brush sizes greater >2500, the mod temporarily sets the brush strength in th
 
 # Notes
 
+- Click in the space in between the up/down arrows in the brush options to manually enter a custom brush size
 - When using extremely large brush sizes avoid placing trees or objects at full strength, if the brush is too big your game might crash
 - If the brush touches over the edge of your city's purchased area, none of the brush actions will apply, use the Anarchy mod by yenyang to overcome this.
 
@@ -37,16 +38,17 @@ If you like this mod be sure to leave an upvote! Thanks
 	<!--Tag, can be set multiple times-->
 	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
-	<ForumLink Value="" />
+	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/brush-size-unlimiter.1644776/" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0.2" />
+	<ModVersion Value="1.0.3" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog>
-    - description update 2
+  <ChangeLog>
+    # v1.0.3
+    * Removed patch for devUI slider due to removal in game version 1.1.2f1
   </ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
   <ExternalLink Type="github" Url="https://github.com/Cgameworld/BrushSizeUnlimiter" />

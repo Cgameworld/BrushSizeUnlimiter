@@ -32,8 +32,6 @@ namespace BrushSizeUnlimiter
             set
             {
                 _maxBrushSize = value;
-                m_brushSizeUnlimiterSystem = World.DefaultGameObjectInjectionWorld?.GetOrCreateSystemManaged<BrushSizeUnlimiterSystem>();
-                m_brushSizeUnlimiterSystem.SetDevUIMaxBrushSize();
                 MakeSureSave = new Random().Next();
             }
         }
