@@ -37,7 +37,7 @@ namespace BrushSizeUnlimiter.Patches
 
     //patch ingame brush tool
     [HarmonyPatch(typeof(ToolUISystem))]
-    [HarmonyPatch("<OnCreate>b__18_16")]
+    [HarmonyPatch("<OnCreate>b__18_19")]
     public static class OnCreatePatch
     {     
         static bool Prefix(ref float __result)
