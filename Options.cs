@@ -1,20 +1,25 @@
 ﻿using BrushSizeUnlimiter.Locale;
+using BrushSizeUnlimiter.Systems;
 using Colossal.IO.AssetDatabase;
+using Game;
 using Game.Modding;
 using Game.SceneFlow;
 using Game.Settings;
-using Game;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
-using BrushSizeUnlimiter.Systems;
 using Unity.Entities;
 
 namespace BrushSizeUnlimiter
 {
     [FileLocation(nameof(BrushSizeUnlimiter))]
+    [SettingsUIShowGroupName(GeneralSettingsGroup, OtherSettingsGroup)]
     public class MyOptions : ModSetting
     {
+        public const string GeneralSettingsGroup = "GeneralSettingsGroup";
+        public const string OtherSettingsGroup = "OtherSettingsGroup";
+
         private float _maxBrushSize;
         private bool brushPreviewMod;
         private BrushSizeUnlimiterSystem m_brushSizeUnlimiterSystem;
@@ -24,7 +29,7 @@ namespace BrushSizeUnlimiter
         {
             SetDefaults();
         }
-
+        [SettingsUISection(GeneralSettingsGroup)]
         [SettingsUISlider(min = 1000f, max = 20000f, step = 500f, unit = "integer")]
         public float MaxBrushSize
         {
@@ -36,7 +41,7 @@ namespace BrushSizeUnlimiter
             }
         }
 
-        [SettingsUISection("BrushPreviewMod")]
+        [SettingsUISection(GeneralSettingsGroup)]
         public bool BrushPreviewMod
         {
             get => brushPreviewMod;
@@ -46,6 +51,9 @@ namespace BrushSizeUnlimiter
                 MakeSureSave = new Random().Next();
             }
         }
+
+        [SettingsUISection(OtherSettingsGroup)]
+        public string ModVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         //sometimes saving doesn't happen when changing values to their default? - hack to guarantee
         [SettingsUIHidden]

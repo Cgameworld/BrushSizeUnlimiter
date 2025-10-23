@@ -23,10 +23,14 @@ namespace BrushSizeUnlimiter.Locale
             return new Dictionary<string, string>
             {
                 { m_Setting.GetSettingsLocaleID(), "Brush Size Unlimiter" },
+                { m_Setting.GetOptionGroupLocaleID(nameof(MyOptions.GeneralSettingsGroup)), "General" },
+                { m_Setting.GetOptionGroupLocaleID(nameof(MyOptions.OtherSettingsGroup)), "Other" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(MyOptions.MaxBrushSize)), "Maximum Brush Size" },
                 { m_Setting.GetOptionDescLocaleID(nameof(MyOptions.MaxBrushSize)), brushSizeDescription},
                 { m_Setting.GetOptionLabelLocaleID(nameof(MyOptions.BrushPreviewMod)), "Hide Object Placement Preview With Large Brush Sizes" },
-                { m_Setting.GetOptionDescLocaleID(nameof(MyOptions.BrushPreviewMod)), brushPreviewModDescription}
+                { m_Setting.GetOptionDescLocaleID(nameof(MyOptions.BrushPreviewMod)), brushPreviewModDescription},
+                { m_Setting.GetOptionLabelLocaleID(nameof(MyOptions.ModVersion)), "Mod Version"},
+                { m_Setting.GetOptionDescLocaleID(nameof(MyOptions.ModVersion)), "Installed version of mod"}
             };
 
         }
